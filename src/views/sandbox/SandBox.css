@@ -1,0 +1,9 @@
+#root,.ant-layout{
+  height: 100%;
+}
+.ant-layout .ant-layout-header {
+  background: white;
+}
+.ant-layout .ant-layout-sider {
+  background: white;
+}
