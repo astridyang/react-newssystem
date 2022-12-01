@@ -12,7 +12,11 @@ export default function IndexRouter() {
   const routes = useRoutes([
     {
       path: "/login",
-      element: <Login />,
+      element: (
+        <LoginComponent>
+          <Login />
+        </LoginComponent>
+      ), 
     },
     {
       path: "/",
@@ -55,4 +59,8 @@ export default function IndexRouter() {
 // 路由拦截
 function AuthComponent({ children }) {
   return localStorage.getItem("token") ? children : <Redirect to="/login" />;
+}
+
+function LoginComponent({ children }) {
+  return localStorage.getItem("token") ? <Redirect to="/" /> : children;
 }

@@ -11,20 +11,26 @@ export default function SideMenu() {
   const location = useLocation();
   const selectedKeys = [location.pathname];
   const openKeys = [`/${location.pathname.split("/")[1]}`];
+  const {
+    role: { rights },
+  } = JSON.parse(localStorage.getItem("token"));
+  const filterPermisson = (item) => {
+    return item.pagepermisson === 1 && rights.includes(item.key);
+  };
   useEffect(() => {
     axios.get("http://localhost:5000/rights?_embed=children").then((res) => {
       const temp = res.data
-        .filter((item) => item.pagepermisson === 1)
+        .filter((item) => filterPermisson(item))
         .map((item) => {
-          item.children = item.children.filter(
-            (child) => child.pagepermisson === 1
+          item.children = item.children.filter((child) =>
+            filterPermisson(child)
           );
           item.children.map((child) => {
             delete child.rightId;
             return child;
           });
           if (item.children.length === 0) {
-            item.children = null
+            item.children = null;
           }
           return item;
         });
@@ -33,7 +39,9 @@ export default function SideMenu() {
   }, []);
   return (
     <Sider trigger={null} collapsible collapsed={collapsed}>
-      <div style={{ height: "100vh", display: "flex", flexDirection: "column" }}>
+      <div
+        style={{ height: "100vh", display: "flex", flexDirection: "column" }}
+      >
         <div className="logo" />
         <div style={{ flex: 1, overflow: "auto" }}>
           <Menu

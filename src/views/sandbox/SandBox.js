@@ -1,8 +1,8 @@
 import { Layout } from "antd";
 import React from "react";
 import { Outlet } from "react-router-dom";
-import SideMenu from "../../components/SideMenu";
-import TopHeader from "../../components/TopHeader";
+import SideMenu from "../../components/sandbox/SideMenu";
+import TopHeader from "../../components/sandbox/TopHeader";
 import "./SandBox.css"
 const { Content } = Layout;
 export default function SandBox() {
