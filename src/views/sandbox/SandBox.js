@@ -1,11 +1,17 @@
 import { Layout } from "antd";
-import React from "react";
+import React, { useEffect } from "react";
 import { Outlet } from "react-router-dom";
 import SideMenu from "../../components/sandbox/SideMenu";
 import TopHeader from "../../components/sandbox/TopHeader";
-import "./SandBox.css"
+import "./SandBox.css";
+import NProgress from "nprogress";
+import "nprogress/nprogress.css";
 const { Content } = Layout;
 export default function SandBox() {
+  NProgress.start();
+  useEffect(() => {
+    NProgress.done();
+  });
   return (
     <Layout>
       <SideMenu />
@@ -17,8 +23,8 @@ export default function SandBox() {
             margin: "24px 16px",
             padding: 24,
             minHeight: 280,
-            background:'white',
-            overflow:"auto"
+            background: "white",
+            overflow: "auto",
           }}
         >
           <Outlet />

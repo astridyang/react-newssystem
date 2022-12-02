@@ -19,7 +19,7 @@
       "id": 2
     },
     {
-      "username": "钢蛋",
+      "username": "qq",
       "password": "123",
       "roleState": true,
       "default": false,
@@ -28,7 +28,7 @@
       "id": 3
     },
     {
-      "username": "西门吹灯ww",
+      "username": "ee",
       "password": "123",
       "roleState": true,
       "default": false,
@@ -141,9 +141,9 @@
         "/publish-manage/published",
         "/publish-manage/sunset",
         "/user-manage",
-        "/home",
         "/right-manage",
-        "/publish-manage"
+        "/publish-manage",
+        "/home"
       ]
     },
     {
@@ -745,21 +745,6 @@
       "id": 22
     },
     {
-      "title": "bbb",
-      "categoryId": 6,
-      "content": "<p>bbb</p>\n",
-      "region": "全球",
-      "author": "admin",
-      "roleId": 1,
-      "auditState": 0,
-      "publishState": 0,
-      "createTime": 1668431954032,
-      "star": 0,
-      "view": 0,
-      "publishTime": 0,
-      "id": 23
-    },
-    {
       "title": "xinxin",
       "categoryId": 2,
       "content": "<p>xinxinxixnixnixn</p>\n",
@@ -880,37 +865,6 @@
       "id": 32
     },
     {
-      "label": "dddddddddddddddddddd",
-      "categoryId": "世界体育",
-      "content": "<p>ttttttddddddd</p>\n",
-      "region": "全球",
-      "author": "admin",
-      "roleId": 1,
-      "auditState": 0,
-      "publishState": 0,
-      "createTime": 1669610005173,
-      "star": 0,
-      "view": 0,
-      "publishTime": 0,
-      "id": 33,
-      "title": "dddddddddddddddddddd"
-    },
-    {
-      "title": "是事实上事实上事实上",
-      "categoryId": 6,
-      "content": "<p>是事实上事实上事实上</p>\n",
-      "region": "全球",
-      "author": "admin",
-      "roleId": 1,
-      "auditState": 0,
-      "publishState": 0,
-      "createTime": 1669636622038,
-      "star": 0,
-      "view": 0,
-      "publishTime": 0,
-      "id": 34
-    },
-    {
       "title": "dddfffff",
       "categoryId": 6,
       "content": "<p>gg</p>\n",
@@ -984,6 +938,34 @@
       "view": 0,
       "publishTime": 0,
       "id": 39
+    },
+    {
+      "title": "222",
+      "categoryId": 2,
+      "content": "<p>ffff</p>\n",
+      "region": "全球",
+      "author": "admin",
+      "roleId": 1,
+      "auditState": 1,
+      "publishState": 0,
+      "createTime": 1669965134704,
+      "star": 0,
+      "view": 0,
+      "id": 41
+    },
+    {
+      "title": "rrrrrrrrr",
+      "categoryId": 5,
+      "content": "<p>rrrrrrrrrrrr</p>\n",
+      "region": "全球",
+      "author": "admin",
+      "roleId": 1,
+      "auditState": 0,
+      "publishState": 0,
+      "createTime": 1669967400051,
+      "star": 0,
+      "view": 0,
+      "id": 42
     }
   ]
 }

@@ -18,7 +18,7 @@ export default function SideMenu() {
     return item.pagepermisson === 1 && rights.includes(item.key);
   };
   useEffect(() => {
-    axios.get("http://localhost:5000/rights?_embed=children").then((res) => {
+    axios.get("/rights?_embed=children").then((res) => {
       const temp = res.data
         .filter((item) => filterPermisson(item))
         .map((item) => {

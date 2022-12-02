@@ -19,18 +19,29 @@ export default function UserList() {
   const editRef = useRef(null);
   const [regionDisabled, setRegionDisabled] = useState(false);
   const [currentRow, setCurrentRow] = useState(null);
+  const { roleId, username, region } = JSON.parse(
+    localStorage.getItem("token")
+  );
   useEffect(() => {
-    axios.get("http://localhost:5000/users?_expand=role").then((res) => {
-      setDataSource(res.data);
+    axios.get("/users?_expand=role").then((res) => {
+      let list = res.data;
+      if (roleId === 2) {
+        list = list.filter(
+          (item) =>
+            item.username === username ||
+            (item.region === region && item.roleId === 3)
+        );
+      }
+      setDataSource(list);
     });
-  }, []);
+  }, [region,roleId,username]);
   useEffect(() => {
-    axios.get("http://localhost:5000/regions").then((res) => {
+    axios.get("/regions").then((res) => {
       setRegionList(res.data);
     });
   }, []);
   useEffect(() => {
-    axios.get("http://localhost:5000/roles").then((res) => {
+    axios.get("/roles").then((res) => {
       setRoleList(res.data);
     });
   }, []);
@@ -41,7 +52,7 @@ export default function UserList() {
       content: "Some descriptions",
       onOk() {
         setDataSource(dataSource.filter((data) => data.id !== item.id));
-        axios.delete(`http://localhost:5000/users/${item.id}`);
+        axios.delete(`/users/${item.id}`);
       },
       onCancel() {
         // console.log('Cancel');
@@ -57,7 +68,7 @@ export default function UserList() {
         setIsAddopen(false);
         formRef.current.resetFields();
         axios
-          .post(`http://localhost:5000/users`, {
+          .post(`/users`, {
             ...value,
             default: false,
             roleState: true,
@@ -97,7 +108,7 @@ export default function UserList() {
             return data;
           })
         );
-        axios.patch(`http://localhost:5000/users/${currentRow.id}`, {
+        axios.patch(`/users/${currentRow.id}`, {
           ...value,
         });
       })
@@ -108,7 +119,7 @@ export default function UserList() {
   const handleChange = (item) => {
     item.roleState = !item.roleState;
     setDataSource([...dataSource]);
-    axios.patch(`http://localhost:5000/users/${item.id}`, {
+    axios.patch(`/users/${item.id}`, {
       roleState: item.roleState,
     });
   };
@@ -242,6 +253,7 @@ export default function UserList() {
           regionList={regionList}
           ref={editRef}
           regionDisabled={regionDisabled}
+          isEdit={true}
         />
       </Modal>
       ;
