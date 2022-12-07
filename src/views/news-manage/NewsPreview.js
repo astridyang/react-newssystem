@@ -16,6 +16,7 @@ export default function NewsPreview() {
   }, [params.id]);
   const auditStateList = ["未审核", "审核中", "已通过", "未通过"];
   const publishStateList = ["未发布", "待发布", "已上线", "已下线"];
+  const colorList = ["black", "orange", "green", "red"];
   return (
     <div>
       {newsInfo && (
@@ -42,10 +43,10 @@ export default function NewsPreview() {
                 {newsInfo.region}
               </Descriptions.Item>
               <Descriptions.Item label="Audit Status">
-                {auditStateList[newsInfo.auditState]}
+                <span style={{color:colorList[newsInfo.auditState]}}>{auditStateList[newsInfo.auditState]}</span>
               </Descriptions.Item>
               <Descriptions.Item label="Publish Status">
-                {publishStateList[newsInfo.publishState]}
+                <span style={{color:colorList[newsInfo.publishState]}}>{publishStateList[newsInfo.publishState]}</span>
               </Descriptions.Item>
               <Descriptions.Item label="Visits">
                 {newsInfo.view}
@@ -56,7 +57,10 @@ export default function NewsPreview() {
               <Descriptions.Item label="Comments">0</Descriptions.Item>
             </Descriptions>
           </PageHeader>
-          <div dangerouslySetInnerHTML={{ __html: newsInfo.content }} style={{padding:'24px'}}></div>
+          <div
+            dangerouslySetInnerHTML={{ __html: newsInfo.content }}
+            style={{ padding: "24px" }}
+          ></div>
         </>
       )}
     </div>

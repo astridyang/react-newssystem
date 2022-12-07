@@ -6,10 +6,14 @@ import {
 } from "@ant-design/icons";
 import { Layout, Dropdown, Avatar } from "antd";
 import { useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { toggleCollapse } from "../../redux/slice/collapseSlice";
 
 const { Header } = Layout;
 export default function TopHeader() {
-  const [collapsed, setCollapsed] = useState(false);
+  // const [collapsed, setCollapsed] = useState(false);
+  const collapsed = useSelector((state)=>state.collapse.value)
+  const dispatch = useDispatch();
   const navigate = useNavigate();
   const {
     role: { roleName },
@@ -33,7 +37,7 @@ export default function TopHeader() {
     <Header className="site-layout-background" style={{ padding: "0 16px" }}>
       {React.createElement(collapsed ? MenuUnfoldOutlined : MenuFoldOutlined, {
         className: "trigger",
-        onClick: () => setCollapsed(!collapsed),
+        onClick: () => dispatch(toggleCollapse()),
       })}
       <div style={{ float: "right" }}>
         <span>welcome back <b>{username}</b>.</span>

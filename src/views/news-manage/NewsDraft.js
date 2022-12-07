@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { Button, Table, Modal } from "antd";
+import { Button, Table, Modal, notification } from "antd";
 import {
   DeleteOutlined,
   EditOutlined,
@@ -11,9 +11,11 @@ import { useNavigate } from "react-router-dom";
 const { confirm } = Modal;
 export default function NewsDraft() {
   const [dataSource, setDataSource] = useState([]);
+  const { username } = JSON.parse(localStorage.getItem("token"));
+
   useEffect(() => {
     axios
-      .get(`/news?author=admin&auditState=0&_expand=category`)
+      .get(`/news?author=${username}&auditState=0&_expand=category`)
       .then((res) => {
         setDataSource(res.data);
       });
@@ -33,7 +35,20 @@ export default function NewsDraft() {
       },
     });
   };
-  const { username } = JSON.parse(localStorage.getItem("token"));
+  const handleAudit = (id) => {
+    axios
+      .patch(`/news/${id}`, {
+        auditState: 1,
+      })
+      .then((res) => {
+        navigate("/audit-manage/list");
+        notification.info({
+          message: `Save success`,
+          description: `You can check it in your audit list`,
+          placement: "bottomRight",
+        });
+      });
+  };
   const navigate = useNavigate();
   const columns = [
     {
@@ -78,7 +93,7 @@ export default function NewsDraft() {
               <EditOutlined />
             </Button>
             <Button type="primary" shape="circle">
-              <UploadOutlined />
+              <UploadOutlined onClick={() => handleAudit(item.id)} />
             </Button>
           </div>
         );

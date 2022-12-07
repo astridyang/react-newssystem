@@ -24,7 +24,7 @@ export default function NewsAdd() {
     axios.get("/categories").then((res) => {
       setCategoryList(res.data);
     });
-  });
+  },[]);
   const items = [
     { title: "Basic", description: "Title,Category" },
     { title: "Content", description: "" },
@@ -50,7 +50,7 @@ export default function NewsAdd() {
       }
     }
   };
-  const { region, username } = JSON.parse(localStorage.getItem("token"));
+  const { region, username,roleId } = JSON.parse(localStorage.getItem("token"));
   const navigate = useNavigate();
   const handleSave = (auditState) => {
     axios
@@ -59,7 +59,7 @@ export default function NewsAdd() {
         content,
         region: region ? region : "全球",
         author: username,
-        roleId: 1,
+        roleId,
         auditState: auditState,
         publishState: 0,
         createTime: Date.now(),

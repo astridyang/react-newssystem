@@ -3,9 +3,11 @@ import { UserOutlined } from "@ant-design/icons";
 import { Layout, Menu } from "antd";
 import { useNavigate, useLocation } from "react-router-dom";
 import axios from "axios";
+import { useSelector } from "react-redux";
 const { Sider } = Layout;
 export default function SideMenu() {
-  const [collapsed, setCollapsed] = useState(false);
+  // const [collapsed, setCollapsed] = useState(true);
+  const collapsed = useSelector((state) => state.collapse.value);
   const navigate = useNavigate();
   const [menu, setMenu] = useState([]);
   const location = useLocation();

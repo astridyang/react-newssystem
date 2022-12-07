@@ -8,8 +8,8 @@ import {
   Steps,
 } from "antd";
 import axios from "axios";
-import React, { useEffect, useRef, useState, useParams } from "react";
-import { useNavigate } from "react-router-dom";
+import React, { useEffect, useRef, useState } from "react";
+import { useNavigate,useParams } from "react-router-dom";
 import NewsEditor from "../../components/news-manage/NewsEditor";
 import style from "./NewsAdd.module.css";
 import { PageHeader } from "@ant-design/pro-layout";
@@ -21,11 +21,12 @@ export default function NewsUpdate() {
   const [content, setContent] = useState(null);
   const formRef = useRef(null);
 
+
   useEffect(() => {
     axios.get("/categories").then((res) => {
       setCategoryList(res.data);
     });
-  });
+  },[]);
 
   const params = useParams();
   useEffect(() => {
@@ -65,21 +66,14 @@ export default function NewsUpdate() {
       }
     }
   };
-  const { region, username } = JSON.parse(localStorage.getItem("token"));
+  // const { region, username,roleId } = JSON.parse(localStorage.getItem("token"));
   const navigate = useNavigate();
   const handleSave = (auditState) => {
     axios
-      .post("/news", {
+      .patch(`/news/${params.id}`, {
         ...formInfo,
         content,
-        region: region ? region : "全球",
-        author: username,
-        roleId: 1,
         auditState: auditState,
-        publishState: 0,
-        createTime: Date.now(),
-        star: 0,
-        view: 0,
       })
       .then((res) => {
         navigate(`${auditState ? "/audit-manage/list" : "/news-manage/draft"}`);

@@ -2,12 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c281ee6b-5a8f-44d4-8737-fb392bef4676" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/SideMenu.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/publish-manage/NewsPublish.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/publish-manage/usePublish.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.json" beforeDir="false" afterPath="$PROJECT_DIR$/db.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/home/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/home/Home.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/sandbox/SandBox.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/sandbox/SandBox.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/news-manage/NewsEditor.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/news-manage/NewsEditor.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/sandbox/SideMenu.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sandbox/SideMenu.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/setupProxy.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/audit-manage/Audit.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/audit-manage/Audit.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/audit-manage/AuditList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/audit-manage/AuditList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/news-manage/NewsAdd.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/news-manage/NewsAdd.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/news-manage/NewsCategory.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/news-manage/NewsCategory.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/news-manage/NewsDraft.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/news-manage/NewsDraft.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/news-manage/NewsPreview.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/news-manage/NewsPreview.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/news-manage/NewsUpdate.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/news-manage/NewsUpdate.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/publish-manage/Published.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/publish-manage/Published.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/publish-manage/Sunset.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/publish-manage/Sunset.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/publish-manage/Unpublished.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/publish-manage/Unpublished.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,6 +56,7 @@
       <option name="presentableId" value="Default" />
       <updated>1669779526205</updated>
       <workItem from="1669779541262" duration="1143000" />
+      <workItem from="1670288306539" duration="7928000" />
     </task>
     <servers />
   </component>
